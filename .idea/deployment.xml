@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="root@region-4.autodl.com:36447" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="root@region-4.autodl.com:36447">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/root/autodl-tmp/Code challenge" local="$PROJECT_DIR$" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath path="/bin" />
+          </excludedPaths>
         </serverdata>
       </paths>
       <paths name="root@region-4.autodl.com:36447 (2)">
@@ -31,5 +34,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
