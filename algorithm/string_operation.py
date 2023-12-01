@@ -27,7 +27,7 @@ class Solution(object):
                     index += 1
                     while s[index] == ' ':
                         index += 1
-                    if s[index]>= '0' and s[index] <= '9':
+                    if '0' <= s[index] <= '9':
                         temp = ''
                         while s[index] not in proirity:
                             temp += s[index]
