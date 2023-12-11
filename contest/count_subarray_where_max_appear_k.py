@@ -77,16 +77,43 @@ class Solution:
             window_size += 1
         return count
     
+    def countSubarray3(self, nums: List[int], k: int) -> int:
+        # O(n) time complexity
+        res = 0
+        max_num = 0
+        count = 0
+        for num in nums:
+            if num > max_num:
+                max_num = num
+                count = 1
+            elif num == max_num:
+                count += 1
+        
+        if count < k:
+            return 0
+        max_num_index = [index for index, val in enumerate(nums) if val == max_num]
+        last_index = len(nums)
+        for i,index in enumerate(max_num_index):
+            if i + k > len(max_num_index):
+                break
+            
+            pre_index = -1 if i == 0 else max_num_index[i-1]
+            res += (index - pre_index) * (last_index - max_num_index[i + k -1])
+        
+        return res
+
     
 def test(f:Solution):
     nums = [61,23,38,23,56,40,82,56,82,82,82,70,8,69,8,7,19,14,58,42,82,10,82,78,15,82]
     k = 2
     print(f.countSubarrays(nums, k))
     print(f.countSubarrays2(nums, k))
+    print(f.countSubarray3(nums, k))
     nums = [1, 4, 5, 3, 4, 5, 1]
     k = 2
     print(f.countSubarrays(nums, k))
     print(f.countSubarrays2(nums, k))
+    print(f.countSubarray3(nums, k))
 
 if __name__ == '__main__':
     F = Solution()
